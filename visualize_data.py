@@ -27,7 +27,7 @@ for col in columns_to_analyze:
     df[col] = df[col].str.strip().str.lower()
     # Replace various forms of 'missing' with a standard 'unspecified'
     # Also handles 'nan' strings that can result from astype(str)
-    df[col].replace(['---', '', 'unnamed', 'nan'], 'unspecified', inplace=True)
+    df[col] = df[col].replace(['---', '', 'unnamed', 'nan'], 'unspecified')
 
 
 # --- Visualization Functions ---
@@ -43,30 +43,36 @@ def create_combined_stacked_barchart(data_frame, column_names):
     x_positions = np.arange(len(column_names))
     width = 0.5
 
-    all_unspecified_counts = []
-    all_other_counts = []
+    all_unspecified_percentages = []
+    all_other_percentages = []
     
     for i, col_name in enumerate(column_names):
         unspecified_count = data_frame[col_name].value_counts().get('unspecified', 0)
         total_count = len(data_frame[col_name])
-        other_count = total_count - unspecified_count
         
-        all_unspecified_counts.append(unspecified_count)
-        all_other_counts.append(other_count)
+        if total_count > 0:
+            unspecified_percentage = (unspecified_count / total_count) * 100
+            other_percentage = 100 - unspecified_percentage
+        else:
+            unspecified_percentage = 0
+            other_percentage = 0
+        
+        all_unspecified_percentages.append(unspecified_percentage)
+        all_other_percentages.append(other_percentage)
 
-        # Plot bars
-        p1 = plt.bar(x_positions[i], unspecified_count, width, color=dark_blue_unspecified, label='Unspecified' if i == 0 else "")
-        p2 = plt.bar(x_positions[i], other_count, width, bottom=unspecified_count, color=dark_blue_other, label='All Others' if i == 0 else "")
+        # Plot bars with percentages
+        p1 = plt.bar(x_positions[i], unspecified_percentage, width, color=dark_blue_unspecified, label='Unspecified' if i == 0 else "")
+        p2 = plt.bar(x_positions[i], other_percentage, width, bottom=unspecified_percentage, color=dark_blue_other, label='All Others' if i == 0 else "")
 
-        # Add text labels
-        if unspecified_count > 0:
-            plt.text(x_positions[i], unspecified_count / 2,
-                     f"{unspecified_count}", ha='center', va='center', color='white', fontsize=12, fontweight='bold')
-        if other_count > 0:
-            plt.text(x_positions[i], unspecified_count + other_count / 2,
-                     f"{other_count}", ha='center', va='center', color='white', fontsize=12, fontweight='bold')
+        # Add text labels as percentages
+        if unspecified_percentage > 0:
+            plt.text(x_positions[i], unspecified_percentage / 2,
+                     f"{unspecified_percentage:.1f}%", ha='center', va='center', color='white', fontsize=12, fontweight='bold')
+        if other_percentage > 0:
+            plt.text(x_positions[i], unspecified_percentage + other_percentage / 2,
+                     f"{other_percentage:.1f}%", ha='center', va='center', color='white', fontsize=12, fontweight='bold')
 
-    plt.ylabel('Number of Occurrences')
+    plt.ylabel('Percentage of Occurrences (%)')
     plt.title('Combined Categories: Unspecified vs. Other')
     plt.xticks(x_positions, column_names, rotation=45, ha='right')
     plt.legend()
@@ -144,6 +150,50 @@ def create_zeus_histograms(data_frame):
                      title_suffix="when Perpetrator is Zeus", 
                      filename_prefix="histogram_mode_of_demise_perpetrator_zeus_")
 
+def create_victim_perpetrator_stacked_chart(data_frame, top_n=20):
+    """
+    Creates a stacked bar chart for the top N characters, showing their occurrences as 'Victim' vs. 'Perpetrator'.
+    """
+    # Combine 'Victim' and 'Perpetrator' columns to find top characters
+    all_chars = pd.concat([data_frame['Victim'], data_frame['Perpetrator']])
+    
+    # Filter out 'unspecified'
+    all_chars = all_chars[all_chars != 'unspecified']
+    
+    # Get top N characters
+    top_chars = all_chars.value_counts().nlargest(top_n).index
+
+    victim_counts = []
+    perpetrator_counts = []
+
+    for char in top_chars:
+        victim_count = data_frame[data_frame['Victim'] == char].shape[0]
+        perpetrator_count = data_frame[data_frame['Perpetrator'] == char].shape[0]
+        victim_counts.append(victim_count)
+        perpetrator_counts.append(perpetrator_count)
+
+    plt.figure(figsize=(15, 10))
+    
+    # Colors for the stacked bars
+    victim_color = '#4682B4'  # SteelBlue
+    perpetrator_color = '#191970' # MidnightBlue
+
+    # Create stacked bar chart
+    plt.bar(top_chars, victim_counts, color=victim_color, label='Victim')
+    plt.bar(top_chars, perpetrator_counts, bottom=victim_counts, color=perpetrator_color, label='Perpetrator')
+
+    plt.ylabel('Number of Occurrences')
+    plt.xlabel('Character')
+    plt.title(f'Top {top_n} Characters: Occurrences as Victim vs. Perpetrator')
+    plt.xticks(rotation=45, ha='right')
+    plt.legend()
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+
+    filename = 'victim_perpetrator_stacked_chart.png'
+    plt.savefig(filename)
+    plt.close()
+    print(f"Saved {filename}")
 
 # --- Generate Plots ---
 create_combined_stacked_barchart(df.copy(), columns_to_analyze)
@@ -152,5 +202,6 @@ for col in columns_to_analyze:
     create_histogram(df.copy(), col, top_n=10)
 
 create_zeus_histograms(df.copy())
+create_victim_perpetrator_stacked_chart(df.copy())
 
 print("All visualizations have been generated.")
