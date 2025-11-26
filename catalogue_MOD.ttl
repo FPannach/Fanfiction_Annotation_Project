@@ -1,0 +1,310 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+:modeOfDemise a skos:Concept ;
+    skos:prefLabel "Mode of Demise" ;
+    skos:definition "A classification representing the manner in which a victim dies, encompassing natural, supernatural, or physical causes." ;
+    skos:narrower :naturalSupernaturalCauses ;
+    skos:narrower :physicalViolence .
+
+:naturalSupernaturalCauses a skos:Concept ;
+    skos:prefLabel "Natural and Supernatural causes" ;
+    skos:definition "A category encompassing modes of demise arising from natural forces or forces of nature unleashed by supernatural entities." .
+    skos:broader :modeOfDemise .
+
+:physicalViolence a skos:Concept ;
+    skos:prefLabel "Physical Violence" ;
+    skos:definition "Death caused by direct physical actions of one or more perpetrators." ;
+    skos:broader :modeOfDemise  .
+
+:indirectOrPsychologicalModes a skos:Concept ;
+    skos:prefLabel "Indirect or Psychological Modes of Demise" ;
+    skos:definition "Modes of demise where the victim dies due to indirect causes, including mental, emotional, or situational factors rather than direct physical harm." ;
+    skos:broader :modeOfDemise .
+
+
+
+:struckByLightning a skos:Concept ;
+    skos:prefLabel "Struck by lightning" ;
+    skos:definition "The victim is hit by a natural electrical discharge originating in the atmosphere or by an entity capable of producing an equivalent lightning-like discharge." ;
+    skos:example "Zeus strikes Hades with lightning from his finger." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:vaporisingDisintegration a skos:Concept ;
+    skos:prefLabel "Vaporising / disintegration" ;
+    skos:definition "The victim’s body is destroyed physically, leaving no intact biological remnants." ;
+    skos:example "Athena vaporised the creature where it stood." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:burning a skos:Concept ;
+    skos:prefLabel "Burning" ;
+    skos:definition "The victim burns to death." ;
+    skos:example "The Greeks burned Troy and its people." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:petrification a skos:Concept ;
+    skos:prefLabel "Petrification" ;
+    skos:definition "The victim’s body is permanently in a rigid immobile state." ;
+    skos:example "The man turned to stone when he saw Medusa." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:starvation a skos:Concept ;
+    skos:prefLabel "Starvation" ;
+    skos:definition "The victim dies due to lack of sustenance." ;
+    skos:example "The farmers died, because Demeter caused the crops to wither on the fields." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:illness a skos:Concept ;
+    skos:prefLabel "Illness" ;
+    skos:definition "The victim dies due to a disease." ;
+    skos:example "Alexander the Great died of a fever." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:naturalDisaster a skos:Concept ;
+    skos:prefLabel "Natural disaster" ;
+    skos:definition "The victim dies of an unspecified natural disaster." ;
+    skos:example "The traveler was killed by the force of nature." ;
+    skos:note "Often underspecified, e.g. background information." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:flood a skos:Concept ;
+    skos:prefLabel "Flood" ;
+    skos:definition "The victim dies of the effects of a flood." ;
+    skos:example "Zeus sent a flood to wipe out all the humans." ;
+    skos:note "Can be used in a MoD chain, e.g. starvation due to flood, drowning due to flood." ;
+    skos:broader :naturalDisaster .
+
+:drowning a skos:Concept ;
+    skos:prefLabel "Drowning" ;
+    skos:definition "The victim dies by aspiration of a liquid, usually water." ;
+    skos:example "While bathing in a river, she was pulled under water and drowned." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:plague a skos:Concept ;
+    skos:prefLabel "Plague" ;
+    skos:definition "The victim dies as a result of an infectious disease in a widespread outbreak beyond the individual case." ;
+    skos:example "Everyone in the town fell ill and perished." ;
+    skos:related :illness ;
+    skos:broader :naturalSupernaturalCauses .
+
+:deathBySeaMonster a skos:Concept ;
+    skos:prefLabel "Death by seamonster" ;
+    skos:definition "The victim is killed in an unspecified way by a creature that primarily lives in the ocean." ;
+    skos:example "Something came out of the water, grabbed the man by the leg and pulled him under, never to be seen again." ;
+    skos:related :monsters ;
+    skos:broader :naturalSupernaturalCauses .
+
+:stabbingByBull a skos:Concept ;
+    skos:prefLabel "Stabbing by bull" ;
+    skos:definition "The victim’s body is penetrated by the horns of a living bull, ox, cow or other form of cattle." ;
+    skos:example "The prince perished at the horns of the same bull that killed his brother." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:snakeBite a skos:Concept ;
+    skos:prefLabel "Snake bite" ;
+    skos:definition "The victim dies as a result of poison injected through the bite of a venomous snake." ;
+    skos:example "Eurydike steps on a snake and dies." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:softwareMalfunction a skos:Concept ;
+    skos:prefLabel "Software malfunction" ;
+    skos:definition "The death of the victim is caused by a critical software error (bug), system failure, or the unsafe application of a technical device." ;
+    skos:example "Her brother’s avatar disappeared in a sudden flash." ;
+    skos:note "Multiple variants possible, such as a divine player forgetting to save a computer game or a critical bug in a life-support system." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:childBirth a skos:Concept ;
+    skos:prefLabel "Child birth" ;
+    skos:definition "The victim dies in labour." ;
+    skos:example "The princess died during labor, leaving her newborn son motherless." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:monsters a skos:Concept ;
+    skos:prefLabel "Monsters" ;
+    skos:definition "The victim is killed by malicious supernatural creatures." ;
+    skos:example "Monsters roamed the cities and killed everyone in their way." ;
+    skos:note "Can appear in mode-of-demise chains, such as being eaten, torn apart, or slain by monsters." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:slaying a skos:Concept ;
+    skos:prefLabel "Slaying" ;
+    skos:definition "General category for death due to direct violent involvement of one or more perpetrators." ;
+    skos:broader :physicalViolence ;
+    skos:example "Hermes struck him dead in a fit of anger." .
+
+:stabbing a skos:Concept ;
+    skos:prefLabel "Stabbing" ;
+    skos:definition "The victim is stabbed with a sharp object." ;
+    skos:broader :physicalViolence ;
+    skos:example "Hector stabs Patroclus on the field of battle." .
+
+:beheading a skos:Concept ;
+    skos:prefLabel "Beheading" ;
+    skos:definition "The victim’s head is separated from the body." ;
+    skos:broader :physicalViolence ;
+    skos:note "Often in form of physical punishment, sentencing to death."
+    skos:example "They picked up the first group of people and ripped their heads off entirely." .
+
+:tearingToPieces a skos:Concept ;
+    skos:prefLabel "Tearing to Pieces" ;
+    skos:definition "Multiple body parts being ripped from the victim." ;
+    skos:broader :physicalViolence;
+    skos:example "The Thrakian women tore Orpheus to pieces." ;
+    skos:related :choppingIntoPieces .
+
+:choppingIntoPieces a skos:Concept ;
+    skos:prefLabel "Chopping into Pieces" ;
+    skos:definition "Multiple body parts are being cut off with a sharp weapon." ;
+    skos:broader :physicalViolence ;
+    skos:example "Tantalus cuts up his own son Pelops and serves him to the gods." ;
+    skos:related :tearingIntoPieces .
+
+:discus a skos:Concept ;
+    skos:prefLabel "Discus" ;
+    skos:definition "The victim dies due to impact of a discus." ;
+    skos:broader :physicalViolence ;
+    skos:example "The discus strikes Hyacinthus on the head and he sinks down lifelessly." .
+
+:beingEaten a skos:Concept ;
+    skos:prefLabel "Being Eaten" ;
+    skos:definition "The victim is eaten." ;
+    skos:broader :physicalViolence ;
+    skos:example "The Maenads ate his innards." .
+
+:beatenToDeath a skos:Concept ;
+    skos:prefLabel "Beaten to Death" ;
+    skos:definition "The victim is beaten to death with a blunt object or by hand." ;
+    skos:broader :physicalViolence ;
+    skos:example "The princess ordered the helpless women to be beaten to death." .
+
+:beingChoked a skos:Concept ;
+    skos:prefLabel "Being Choked" ;
+    skos:definition "The victim dies due to external pressure on or constriction of the neck." ;
+    skos:broader :physicalViolence ;
+    skos:note "Includes strangulation."
+    skos:example "The witch squeezed her neck until she felt the princess’ life drain from her body." .
+
+:slashing a skos:Concept ;
+    skos:prefLabel "Slashing" ;
+    skos:definition "The victim’s body is cut horizontally or vertically by a sharp object in a swift motion." ;
+    skos:broader :physicalViolence ;
+    skos:narrower :slashingThroat ;
+    skos:narrower :slashingInHalf ;
+    skos:example "He felt a rush killing his opponent with a deep slash of his dagger." .
+
+:slashingThroat a skos:Concept ;
+    skos:prefLabel "Slashing Throat" ;
+    skos:definition "The victim's throat is cut by a sharp object in a swift motion." ;
+    skos:broader :slashing ;
+    skos:example "The lifeless body lay there with a large cut across his throat nearly decapitating him." .
+
+:slashingInHalf a skos:Concept ;
+    skos:prefLabel "Slashing in Half" ;
+    skos:definition "The victim’s body is sliced into two parts horizontally or vertically by a sharp object in a swift motion." ;
+    skos:broader :slashing ;
+    skos:example "Her body was cut in half." .
+
+:slashingHeadOff a skos:Concept ;
+    skos:prefLabel "Slashing Head Off" ;
+    skos:definition "The victim’s head is separated from the body by a sharp object in a swift motion." ;
+    skos:broader :beheading ;
+    skos:broader :slashing ;
+    skos:example "Heracles cut off her head with one quick blow." .
+
+:headCrushing a skos:Concept ;
+    skos:prefLabel "Head Crushing" ;
+    skos:definition "The victim’s head is crushed by blunt force using a heavy object or superhuman strength." ;
+    skos:broader :physicalViolence ;
+    skos:example "The poor boy had his skull caved in." .
+
+:beingShot a skos:Concept ;
+    skos:prefLabel "Being Shot" ;
+    skos:definition "The victim dies due to a wound inflicted by a bullet or arrow." ;
+    skos:broader :physicalViolence ;
+    skos:example "He was penetrated by hundreds of arrows shot at once from Artemis’ bow." .
+
+:war a skos:Concept ;
+    skos:prefLabel "War" ;
+    skos:definition "The victim dies due to an ongoing military conflict. General category for dying in war-related activities." ;
+    skos:broader :physicalViolence ;
+    skos:example "The war had cost her her entire family." .
+
+:falling a skos:Concept ;
+    skos:prefLabel "Falling" ;
+    skos:definition "The victim dies due to the impact after a fall." ;
+    skos:broader :physicalViolence ;
+    skos:example "Patroclus was pushed off the wall." .
+
+:hanging a skos:Concept ;
+    skos:prefLabel "Hanging" ;
+    skos:definition "The victim dies, suffocates or starves to death as a result of being hanged." ;
+    skos:broader :physicalViolence ;
+    skos:example "She had the servant hanged because he knew too much." .
+
+:disembowelment a skos:Concept ;
+    skos:prefLabel "Disembowelment" ;
+    skos:definition "The victim’s intestines are removed from the body." ;
+    skos:broader :physicalViolence ;
+    skos:example "The monster ripped out her intestines and ate them." .
+
+:clawingToDeath a skos:Concept ;
+    skos:prefLabel "Clawing to Death" ;
+    skos:definition "The victim’s body is lacerated using long nails or talons." ;
+    skos:broader :physicalViolence ;
+    skos:example "The lion shreds the victim to death with his mighty paws." .
+
+:beingPoisoned a skos:Concept ;
+    skos:prefLabel "Being Poisoned" ;
+    skos:definition "The victim dies by ingesting or otherwise introducing a poisonous substance to the body." ;
+    skos:broader :physicalViolence ;
+    skos:example "I injured him with my poisoned arrow." .
+
+:intercourseOrRape a skos:Concept ;
+    skos:prefLabel "Intercourse/Rape" ;
+    skos:definition "The victim dies as a result of voluntary or involuntary sexual intercourse." ;
+    skos:broader :physicalViolence ;
+    skos:example "As he screamed out in climax, his heart gave out." .
+
+:failureToBeProvidedAssistance a skos:Concept ;
+    skos:prefLabel "Failure to be provided assistance" ;
+    skos:definition "The victim dies due to lack of help in a fatal situation." ;
+    skos:broader :physicalViolence ;
+    skos:example "The man cried for help, but the bystanders just watched him drown." ;
+    skos:note "Often combined with other modes of demise, e.g. drowning, burning, or starving." .
+
+:manipulation a skos:Concept ;
+    skos:prefLabel "Manipulation" ;
+    skos:definition "The perpetrator is manipulated into killing the victim by a third party." ;
+    skos:broader :indirectOrPsychologicalModes ;
+    skos:example "The princess begs her lover to kill the king." ;
+    skos:note "Must be combined with another mode of demise, such as slaying, stabbing, or poisoning. Can be combined with suicide/self-sacrifice." .
+
+:sacrifice a skos:Concept ;
+    skos:prefLabel "Sacrifice" ;
+    skos:definition "The victim is killed, often in a ritual context, to appease a deity or supernatural being." ;
+    skos:broader :indirectOrPsychologicalModes ;
+    skos:example "Agamemnon sacrificed Iphigenia for Artemis." .
+
+:selfSacrifice a skos:Concept ;
+    skos:prefLabel "Self-Sacrifice" ;
+    skos:definition "The victim commits suicide or volunteers to be killed, often in a ritual context, to appease a deity or supernatural being, or to provide rescue to a third party." ;
+    skos:broader :indirectOrPsychologicalModes ;
+    skos:example "The lover caught the arrow with his body to shield the princess." .
+
+:curse a skos:Concept ;
+    skos:prefLabel "Curse" ;
+    skos:definition "The victim dies of a curse." ;
+    skos:broader :indirectOrPsychologicalModes ;
+    skos:example "As punishment for their transgressions, all firstborn sons died." ;
+    skos:note "Seldom directly a mode of demise, but mostly combined with other modes of demise." .
+    
+:lookingAtDivineAura a skos:Concept ;
+    skos:prefLabel "Looking at a Divine Aura" ;
+    skos:definition "The (mortal) victim dies due to the effect of experiencing a supernatural presence or energy." ;
+    skos:broader :indirectOrPsychologicalModes ;
+    skos:example "Mortal warriors who approached the goddess too closely were consumed by her divine aura." .
+
+:withdrawal a skos:Concept ;
+    skos:prefLabel "Withdrawal" ;
+    skos:definition "The victim dies from the sudden removal of a substance they were physically dependent on." ;
+    skos:broader :indirectOrPsychologicalModes ;
+    skos:example "Those of them who were dependent on the ambrosia died." .
