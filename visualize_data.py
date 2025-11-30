@@ -30,6 +30,11 @@ for col in columns_to_analyze:
     df[col] = df[col].replace(['---', '', 'unnamed', 'nan'], 'unspecified')
 
 
+# Merge different spellings and references to Clytemnestra
+df['Victim'] = df['Victim'].replace(["klytemnestra", "clytaemnestra", "agamemnon's wife"], "clytemnestra")
+df['Perpetrator'] = df['Perpetrator'].replace(["klytemnestra", "clytaemnestra", "agamemnon's wife"], "clytemnestra")
+
+
 # --- Visualization Functions ---
 
 def create_combined_stacked_barchart(data_frame, column_names):

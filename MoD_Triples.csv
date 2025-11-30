@@ -33,7 +33,7 @@ unspecified,yes,unnamed,Aura
 being eaten,yes,Aura's children,Aura
 unspecified,yes,children,Medea
 stabbing,yes,bard,Icarus
-??? (curse),yes,Minos' mistresses,Poseidon
+curse,yes,Minos' mistresses,Poseidon
 stabbing by bull ,yes,Prince Androgeus,Bull
 unspecified,yes,Heracles,Megara and his children
 sacrifice,yes,seven youths and seven maidens,King Aegeus
@@ -97,7 +97,7 @@ suicide,no,Proto,---
 beheading,yes,Cerberus,Zeus' guard
 unspecified,yes,humans,humans
 starvation,yes,farmers,Demeter
-eaten by animal,no,mortals,---
+being eaten,no,mortals,---
 sacrifice,yes,infants,a king of Thebes
 illness,yes,mortals,Thanatos
 unspecified,yes,mortals,Hypnos
@@ -220,7 +220,7 @@ flood,yes,mortals,Zeus
 withdrawal,yes,Leuce,Zeus
 unspecified,yes,Plutus,Zeus
 struck by lightning,yes,Asclepius,Zeus
-disintegration,yes,Prometheus,Zeus
+vaporisation/disintegration,yes,Prometheus,Zeus
 cold,unspecified,human women,---
 starvation,unspecified,human women,---
 illness,unspecified,human women,---
@@ -257,7 +257,7 @@ slashing throat,yes,the embalmer,Kayde and Luanne
 being eaten,yes,he,a shark
 being eaten,yes,a neighbour,a werewolf neighbour
 drowning,yes,unspecified,sea monsters
-stabbing,,unspecified,angels
+stabbing,yes,unspecified,angels
 burning,no,NN's parents,---
 unspecified,unspecified,a doctor,unspecified
 unspecified,unspecified,a set of twins,unspecified
@@ -266,7 +266,7 @@ unspecified,unspecified,a camgirl,unspecified
 unspecified,unspecified,two of Artemis' maidens,a griffin
 discus,no,Hyacinthus,---
 transformation,no,Daphne,---
-discus (implied),yes,Hyacinthus,Zephyrus
+discus,yes,Hyacinthus,Zephyrus
 unspecified,yes,a nymph,Orpheus
 petrification,yes,a nymph,Orpheus
 snake bite/suicide,no,Eurydice,---
@@ -339,7 +339,7 @@ being shot/poison,yes,unspecified,Heracles
 being shot/poison,yes,Chiron,Heracles
 drowning,yes,Hylas,water nymphs
 unspecified,unspecified,Heracles' children,unspecified
-disease,yes,humans,Pandora
+illness,yes,humans,Pandora
 unspecified,yes,Heracles' nephews,Heracles
 being shot,yes,Coronis,Apollo or Artemis
 struck by lightning,yes,a man,Zeus

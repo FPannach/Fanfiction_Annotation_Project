@@ -1,0 +1,122 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKOS Hierarchy</title>
+        <style>
+            body {{
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                padding: 2em;
+                background-color: #f8f9fa;
+                color: #333;
+            }}
+            h1 {{
+                color: #005a9c;
+            }}
+            ul {{
+                list-style-type: none;
+                padding-left: 20px;
+            }}
+            .concept {{
+                cursor: pointer;
+                padding: 3px 6px;
+                border-radius: 5px;
+                transition: background-color 0.2s ease-in-out;
+                display: inline-block;
+            }}
+            .concept:hover {{
+                background-color: #dee2e6;
+            }}
+            #tooltip {{
+                position: absolute;
+                display: none;
+                padding: 12px;
+                background-color: rgba(0, 0, 0, 0.8);
+                color: #fff;
+                border-radius: 8px;
+                font-size: 0.9em;
+                pointer-events: none;
+                max-width: 350px;
+                z-index: 1000;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }}
+            /* Tree-like structure lines */
+            li {{
+                position: relative;
+            }}
+            ul > li {{
+                margin-top: 5px;
+            }}
+            ul li::before, ul li::after {{
+                content: '';
+                position: absolute;
+                left: -15px;
+            }}
+            ul li::before {{
+                border-left: 1px solid #adb5bd;
+                height: 100%;
+                top: 0;
+                width: 1px;
+            }}
+            ul li:last-child::before {{
+                height: 1.1em;
+            }}
+            ul li::after {{
+                border-top: 1px solid #adb5bd;
+                height: 1px;
+                top: 1.1em;
+                width: 15px;
+            }}
+        </style>
+    </head>
+    <body>
+        <h1>Interactive SKOS Vocabulary</h1>
+        <div id="hierarchy-container">
+    <ul><li><span class="concept" data-definition="A classification representing the manner in which a victim dies, encompassing natural, supernatural, or physical causes." data-example="">Mode of Demise</span><ul><li><span class="concept" data-definition="Modes of demise where the victim dies due to indirect causes, including mental, emotional, or situational factors rather than direct physical harm." data-example="">Indirect or Psychological Modes of Demise</span><ul><li><span class="concept" data-definition="The victim dies of a curse." data-example="As punishment for their transgressions, all firstborn sons died.">Curse</span></li><li><span class="concept" data-definition="The (mortal) victim dies due to the effect of experiencing a supernatural presence or energy." data-example="Mortal warriors who approached the goddess too closely were consumed by her divine aura.">Looking at a Divine Aura</span></li><li><span class="concept" data-definition="The perpetrator is manipulated into killing the victim by a third party." data-example="The princess begs her lover to kill the king.">Manipulation</span></li><li><span class="concept" data-definition="The victim is killed, often in a ritual context, to appease a deity or supernatural being." data-example="Agamemnon sacrificed Iphigenia for Artemis.">Sacrifice</span></li><li><span class="concept" data-definition="The victim commits suicide or volunteers to be killed, often in a ritual context, to appease a deity or supernatural being, or to provide rescue to a third party." data-example="The lover caught the arrow with his body to shield the princess.">Self-Sacrifice</span></li><li><span class="concept" data-definition="The victim dies from the sudden removal of a substance they were physically dependent on." data-example="Those of them who were dependent on the ambrosia died.">Withdrawal</span></li></ul></li><li><span class="concept" data-definition="A category encompassing modes of demise arising from natural forces or forces of nature unleashed by supernatural entities." data-example="">Natural and Supernatural causes</span><ul><li><span class="concept" data-definition="The victim burns to death." data-example="The Greeks burned Troy and its people.">Burning</span></li><li><span class="concept" data-definition="The victim dies in labour." data-example="The princess died during labor, leaving her newborn son motherless.">Child birth</span></li><li><span class="concept" data-definition="The victim dies due to exposure to extreme cold, freezing temperatures." data-example="The hero froze to death after spending the night on the mountain.">Cold</span></li><li><span class="concept" data-definition="The victim dies because they remain in a building or structure that falls in on itself, crushing the body or creating an entrapment." data-example="When the tower crumbled during the earthquake, the guards were buried beneath the falling stone.">Collapsing building</span></li><li><span class="concept" data-definition="The victim is killed in an unspecified way by a creature that primarily lives in the ocean." data-example="Something came out of the water, grabbed the man by the leg and pulled him under, never to be seen again.">Death by seamonster</span></li><li><span class="concept" data-definition="The victim dies by aspiration of a liquid, usually water." data-example="While bathing in a river, she was pulled under water and drowned.">Drowning</span></li><li><span class="concept" data-definition="The victim dies due to a disease." data-example="Alexander the Great died of a fever.">Illness</span></li><li><span class="concept" data-definition="The victim dies due to an attack by an animal acting on instinct, without character-level agency." data-example="The boar gored him and left him dying on the forest floor.">Killed by animal</span><ul><li><span class="concept" data-definition="The victim’s body is penetrated by the horns of a living bull, ox, cow or other form of cattle." data-example="The prince perished at the horns of the same bull that killed his brother.">Stabbing by bull</span></li></ul></li><li><span class="concept" data-definition="The victim is killed by malicious supernatural creatures." data-example="Monsters roamed the cities and killed everyone in their way.">Monsters</span></li><li><span class="concept" data-definition="The victim dies of an unspecified natural disaster." data-example="The traveler was killed by the force of nature.">Natural disaster</span><ul><li><span class="concept" data-definition="The victim dies due to lack of rain." data-example="The farmers died because Demeter caused the crops to wither on the fields.">Drought</span></li><li><span class="concept" data-definition="The victim dies of the effects of a flood." data-example="Zeus sent a flood to wipe out all the humans.">Flood</span></li></ul></li><li><span class="concept" data-definition="The victim dies due to the natural decline of bodily functions associated with advanced age." data-example="After many decades of rule, the king passed away peacefully.">Old age</span></li><li><span class="concept" data-definition="The victim dies as a result of an infectious disease in a widespread outbreak beyond the individual case." data-example="Everyone in the town fell ill and perished.">Plague</span></li><li><span class="concept" data-definition="The victim dies as a result of poison injected through the bite of a venomous snake." data-example="Eurydike steps on a snake and dies.">Snake bite</span></li><li><span class="concept" data-definition="The death of the victim is caused by a critical software error (bug), system failure, or the unsafe application of a technical device." data-example="Her brother’s avatar disappeared in a sudden flash.">Software malfunction</span></li><li><span class="concept" data-definition="The victim dies due to lack of sustenance." data-example="The farmers died, because Demeter caused the crops to wither on the fields.">Starvation</span></li><li><span class="concept" data-definition="The victim is hit by a natural electrical discharge originating in the atmosphere or by an entity capable of producing an equivalent lightning-like discharge." data-example="Zeus strikes Hades with lightning from his finger.">Struck by lightning</span></li><li><span class="concept" data-definition="The victim dies as a result of being transformed into another state, form, or substance, with the transformation effectively ending their former existence." data-example="The nymph dissolved into a tree.">Transformation</span><ul><li><span class="concept" data-definition="The victim’s body is permanently in a rigid immobile state." data-example="The man turned to stone when he saw Medusa.">Petrification</span></li></ul></li><li><span class="concept" data-definition="The victim’s body is destroyed physically, leaving no intact biological remnants." data-example="Athena vaporised the creature where it stood.">Vaporising / disintegration</span></li></ul></li><li><span class="concept" data-definition="Death caused by direct physical actions of one or more perpetrators." data-example="">Physical Violence</span><ul><li><span class="concept" data-definition="The victim is beaten to death with a blunt object or by hand." data-example="The princess ordered the helpless women to be beaten to death.">Beaten to Death</span></li><li><span class="concept" data-definition="The victim’s head is separated from the body." data-example="They picked up the first group of people and ripped their heads off entirely.">Beheading</span><ul><li><span class="concept" data-definition="The victim’s head is separated from the body by a sharp object in a swift motion." data-example="Heracles cut off her head with one quick blow.">Slashing Head Off</span></li></ul></li><li><span class="concept" data-definition="The victim dies due to external pressure on or constriction of the neck." data-example="The witch squeezed her neck until she felt the princess’ life drain from her body.">Being Choked</span></li><li><span class="concept" data-definition="The victim is eaten." data-example="The Maenads ate his innards.">Being Eaten</span></li><li><span class="concept" data-definition="The victim dies by ingesting or otherwise introducing a poisonous substance to the body." data-example="I injured him with my poisoned arrow.">Being Poisoned</span></li><li><span class="concept" data-definition="The victim dies due to a wound inflicted by a bullet or arrow." data-example="He was penetrated by hundreds of arrows shot at once from Artemis’ bow.">Being Shot</span></li><li><span class="concept" data-definition="Multiple body parts are being cut off with a sharp weapon." data-example="Tantalus cuts up his own son Pelops and serves him to the gods.">Chopping into Pieces</span></li><li><span class="concept" data-definition="The victim’s body is lacerated using long nails or talons." data-example="The lion shreds the victim to death with his mighty paws.">Clawing to Death</span></li><li><span class="concept" data-definition="The victim dies due to impact of a discus." data-example="The discus strikes Hyacinthus on the head and he sinks down lifelessly.">Discus</span></li><li><span class="concept" data-definition="The victim’s intestines are removed from the body." data-example="The monster ripped out her intestines and ate them.">Disembowelment</span></li><li><span class="concept" data-definition="The victim dies due to lack of help in a fatal situation." data-example="The man cried for help, but the bystanders just watched him drown.">Failure to be provided assistance</span></li><li><span class="concept" data-definition="The victim dies due to the impact after a fall." data-example="Patroclus was pushed off the wall.">Falling</span><ul><li><span class="concept" data-definition="The victim dies during or as a result of a skydive, typically due to equipment failure or impact after an uncontrolled jump." data-example="Her parachute failed to open during the jump, and she died on impact.">Skydiving</span></li></ul></li><li><span class="concept" data-definition="The victim dies, suffocates or starves to death as a result of being hanged." data-example="She had the servant hanged because he knew too much.">Hanging</span></li><li><span class="concept" data-definition="The victim’s head is crushed by blunt force using a heavy object or superhuman strength." data-example="The poor boy had his skull caved in.">Head Crushing</span></li><li><span class="concept" data-definition="The victim dies as a result of voluntary or involuntary sexual intercourse." data-example="As he screamed out in climax, his heart gave out.">Intercourse/Rape</span></li><li><span class="concept" data-definition="The victim’s body is cut horizontally or vertically by a sharp object in a swift motion." data-example="He felt a rush killing his opponent with a deep slash of his dagger.">Slashing</span><ul><li><span class="concept" data-definition="The victim’s head is separated from the body by a sharp object in a swift motion." data-example="Heracles cut off her head with one quick blow.">Slashing Head Off</span></li><li><span class="concept" data-definition="The victim&#x27;s throat is cut by a sharp object in a swift motion." data-example="The lifeless body lay there with a large cut across his throat nearly decapitating him.">Slashing Throat</span></li><li><span class="concept" data-definition="The victim’s body is sliced into two parts horizontally or vertically by a sharp object in a swift motion." data-example="Her body was cut in half.">Slashing in Half</span></li></ul></li><li><span class="concept" data-definition="General category for death due to direct violent involvement of one or more perpetrators." data-example="Hermes struck him dead in a fit of anger.">Slaying</span></li><li><span class="concept" data-definition="The victim is stabbed with a sharp object." data-example="Hector stabs Patroclus on the field of battle.">Stabbing</span></li><li><span class="concept" data-definition="Multiple body parts being ripped from the victim." data-example="The Thrakian women tore Orpheus to pieces.">Tearing to Pieces</span></li><li><span class="concept" data-definition="The victim dies due to an ongoing military conflict. General category for dying in war-related activities." data-example="The war had cost her her entire family.">War</span></li></ul></li></ul></li></ul>
+        </div>
+        <div id="tooltip"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {{
+                const concepts = document.querySelectorAll('.concept');
+                const tooltip = document.getElementById('tooltip');
+
+                if (!concepts.length) {{
+                    console.error("No concepts found. Check HTML generation.");
+                    return;
+                }}
+
+                concepts.forEach(concept => {{
+                    concept.addEventListener('mouseover', function(e) {{
+                        const definition = this.getAttribute('data-definition');
+                        if (definition) {{
+                            tooltip.innerHTML = definition;
+                            tooltip.style.display = 'block';
+                        }}
+                    }});
+
+                    concept.addEventListener('mousemove', function(e) {{
+                        tooltip.style.left = (e.pageX + 20) + 'px';
+                        tooltip.style.top = (e.pageY + 20) + 'px';
+                    }});
+
+                    concept.addEventListener('mouseout', function() {{
+                        tooltip.style.display = 'none';
+                    }});
+
+                    concept.addEventListener('click', function(e) {{
+                        const example = this.getAttribute('data-example');
+                        if (example) {{
+                            alert('Example:
+' + example.replace(/&quot;/g, '"'));
+                        }}
+                        e.stopPropagation();
+                    }});
+                }});
+            }});
+        </script>
+    </body>
+    </html>
+    

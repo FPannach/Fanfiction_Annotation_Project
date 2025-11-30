@@ -21,12 +21,16 @@
     skos:definition "Modes of demise where the victim dies due to indirect causes, including mental, emotional, or situational factors rather than direct physical harm." ;
     skos:broader :modeOfDemise .
 
-
-
 :struckByLightning a skos:Concept ;
     skos:prefLabel "Struck by lightning" ;
     skos:definition "The victim is hit by a natural electrical discharge originating in the atmosphere or by an entity capable of producing an equivalent lightning-like discharge." ;
     skos:example "Zeus strikes Hades with lightning from his finger." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:cold a skos:Concept ;
+    skos:prefLabel "Cold" ;
+    skos:definition "The victim dies due to exposure to extreme cold, freezing temperatures." ;
+    skos:example "The hero froze to death after spending the night on the mountain." ;
     skos:broader :naturalSupernaturalCauses .
 
 :vaporisingDisintegration a skos:Concept ;
@@ -41,10 +45,28 @@
     skos:example "The Greeks burned Troy and its people." ;
     skos:broader :naturalSupernaturalCauses .
 
+:collapsingBuilding a skos:Concept ;
+    skos:prefLabel "Collapsing building" ;
+    skos:definition "The victim dies because they remain in a building or structure that falls in on itself, crushing the body or creating an entrapment." ;
+    skos:example "When the tower crumbled during the earthquake, the guards were buried beneath the falling stone." ;
+    skos:broader :naturalSupernaturalCauses .
+
+:killedByAnimal a skos:Concept ;
+    skos:prefLabel "Killed by animal" ;
+    skos:definition "The victim dies due to an attack by an animal acting on instinct, without character-level agency." ;
+    skos:example "The boar gored him and left him dying on the forest floor." ;
+    skos:broader :naturalSupernaturalCauses .
+
 :petrification a skos:Concept ;
     skos:prefLabel "Petrification" ;
     skos:definition "The victim’s body is permanently in a rigid immobile state." ;
     skos:example "The man turned to stone when he saw Medusa." ;
+    skos:broader :transformation .
+
+:transformation a skos:Concept ;
+    skos:prefLabel "Transformation" ;
+    skos:definition "The victim dies as a result of being transformed into another state, form, or substance, with the transformation effectively ending their former existence." ;
+    skos:example "The nymph dissolved into a tree." ;
     skos:broader :naturalSupernaturalCauses .
 
 :starvation a skos:Concept ;
@@ -73,6 +95,12 @@
     skos:note "Can be used in a MoD chain, e.g. starvation due to flood, drowning due to flood." ;
     skos:broader :naturalDisaster .
 
+:drought a skos:Concept ;
+    skos:prefLabel "Drought" ;
+    skos:definition "The victim dies due to lack of rain." ;
+    skos:example "The farmers died because Demeter caused the crops to wither on the fields." ;
+    skos:broader :naturalDisaster .
+
 :drowning a skos:Concept ;
     skos:prefLabel "Drowning" ;
     skos:definition "The victim dies by aspiration of a liquid, usually water." ;
@@ -86,6 +114,12 @@
     skos:related :illness ;
     skos:broader :naturalSupernaturalCauses .
 
+:oldAge a skos:Concept ;
+    skos:prefLabel "Old age" ;
+    skos:definition "The victim dies due to the natural decline of bodily functions associated with advanced age." ;
+    skos:example "After many decades of rule, the king passed away peacefully." ;
+    skos:broader :naturalSupernaturalCauses .
+
 :deathBySeaMonster a skos:Concept ;
     skos:prefLabel "Death by seamonster" ;
     skos:definition "The victim is killed in an unspecified way by a creature that primarily lives in the ocean." ;
@@ -97,7 +131,13 @@
     skos:prefLabel "Stabbing by bull" ;
     skos:definition "The victim’s body is penetrated by the horns of a living bull, ox, cow or other form of cattle." ;
     skos:example "The prince perished at the horns of the same bull that killed his brother." ;
-    skos:broader :naturalSupernaturalCauses .
+    skos:broader :killedByAnimal .
+
+:skydiving a skos:Concept ;
+    skos:prefLabel "Skydiving" ;
+    skos:definition "The victim dies during or as a result of a skydive, typically due to equipment failure or impact after an uncontrolled jump." ;
+    skos:example "Her parachute failed to open during the jump, and she died on impact." ;
+    skos:broader :falling .
 
 :snakeBite a skos:Concept ;
     skos:prefLabel "Snake bite" ;
