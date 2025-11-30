@@ -16,7 +16,7 @@ manipulation,yes,unsavoury brutes,Smilax
 drowning,no,Crocus' grandfather,
 burning,yes,Aristodamia and her handsome lover,Hera
 unspecified,yes,Hyacinthus,unnamed
-frisbee,no,Hyacinthus,
+discus,no,Hyacinthus,
 skydiving,no,Icarus,
 discus,yes,Hyacinthus,Zephyrus
 flying to close to the sun,no,Icarus,
@@ -71,12 +71,12 @@ slaying,yes,Medusa,thunder's son
 unspecified,yes,Klytemnestra's husband and son,Agamemnon
 sacrifice,yes,Iphigenia,Agamemnon
 stabbing,yes,Agamemnon,Klytemnestra
-stabbing ,yes,Kassandra,Klytemnestra
+stabbing,yes,Kassandra,Klytemnestra
 "manipulation, looking at a divine aura",yes,Semele,Zeus
 unspecified,no,the old queen,---
 being choked,yes,Alicent Hightower,Melinoë
 unspecified,yes,grandfather,Melinoë
-physical weakness due to extensive childbearing,unspecified,Queen Aemma,---
+child birth,unspecified,Queen Aemma,---
 unspecified,unspecified,Viserys' six children,---
 unspecified,yes,"Freya, Atreus, Mimir, Sindri",Kratos
 slashing throat,yes,Freya,Kratos
@@ -84,7 +84,7 @@ slashing throat,yes,Atreus,Kratos
 head crushing,yes,Mimir,Kratos
 slashing in half,yes,Sindri,Kratos
 unspecified,yes,unspecified,Kratos
-slashing and burning,yes,Lysandra,unspecified
+slashing/burning,yes,Lysandra,unspecified
 stabbing,yes,Kratos,Calliope
 slaying,yes,unspecified,unspecified
 head crushing,yes,unspecified,unspecified
@@ -119,7 +119,7 @@ unspecified,yes,The Amazon Queen,Achilles
 manipulation,yes,Orion,Apollo
 being shot,yes,Orion,Artemis
 unspecified,unspecified,A twenty-one year old girl,---
-illness (fever),no,Alexander the Great,---
+illness,no,Alexander the Great,---
 chopping into pieces,yes,Pelops,Tantalus
 sacrifice,yes,Iphigeneia,Agamemnon
 stabbing,yes,Penthesilea,Achilles
@@ -288,7 +288,7 @@ snake bite,yes,a drunk man,Medusa('s snakes)
 snake bite,yes,a man dressed in strange attire,Medusa('s snakes)
 being eaten,yes,a man transformed into a stag,wolves
 unspecified,unspecified,Philomena's mother,---
-implied/unspecified,yes,Kallias,Philomena's father
+unspecified,yes,Kallias,Philomena's father
 war,yes,many young souls,---
 unspecified,yes,a boy,Patroclus
 unspecified,unspecified,Patroclus,---
