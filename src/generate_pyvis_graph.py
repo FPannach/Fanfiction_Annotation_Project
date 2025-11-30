@@ -102,7 +102,7 @@ def create_pyvis_visualization(concepts):
     return net
 
 if __name__ == "__main__":
-    with open('catalogue_MOD.ttl', 'r', encoding='utf-8') as f:
+    with open('../catalogue_MOD.ttl', 'r', encoding='utf-8') as f:
         ttl_content = f.read()
 
     concepts_dict = parse_ttl_to_dict(ttl_content)
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     network = create_pyvis_visualization(concepts_dict)
     
     html = network.generate_html()
-    with open('pyvis_hierarchy.html', 'w', encoding='utf-8') as f:
+    with open('../pyvis_hierarchy.html', 'w', encoding='utf-8') as f:
         f.write(html)
 
     print("Successfully generated pyvis_hierarchy.html")

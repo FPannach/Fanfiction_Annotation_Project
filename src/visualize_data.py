@@ -4,7 +4,7 @@ import numpy as np
 import os # Import os module to handle file paths
 
 # Load the dataset
-csv_file_path = 'MoD_Triples.csv'
+csv_file_path = '../MoD_Triples.csv'
 try:
     df = pd.read_csv(csv_file_path)
 except FileNotFoundError:
@@ -84,7 +84,7 @@ def create_combined_stacked_barchart(data_frame, column_names):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
 
-    filename = f'stacked_barchart_combined.png'
+    filename = f'../images/stacked_barchart_combined.png'
     plt.savefig(filename)
     plt.close()
     print(f"Saved {filename}")

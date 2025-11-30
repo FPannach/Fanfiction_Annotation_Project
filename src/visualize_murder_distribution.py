@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the dataset
-csv_file_path = 'MoD_Triples.csv'
+csv_file_path = '../MoD_Triples.csv'
 try:
     df = pd.read_csv(csv_file_path)
 except FileNotFoundError:
@@ -43,7 +43,7 @@ def create_murder_distribution_chart(data_frame):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
     
-    filename = 'murder_distribution.png'
+    filename = '../images/murder_distribution.png'
     plt.savefig(filename)
     plt.close()
     print(f"Saved {filename}")

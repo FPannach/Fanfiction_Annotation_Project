@@ -86,7 +86,7 @@ def main():
     """
     Main function to generate histograms for GBV data.
     """
-    file_path = 'Instances_of_GBV_anonym.csv'
+    file_path = '../Instances_of_GBV_anonym.csv'
 
     try:
         df = pd.read_csv(file_path)
@@ -96,9 +96,9 @@ def main():
 
     df.columns = df.columns.str.strip()
 
-    create_histogram(df, 'Focalization', 'histogram_focalization.png')
-    create_histogram(df, 'Level of Explicity', 'histogram_level_of_explicity.png')
-    create_stacked_barchart(df, 'Level of Explicity', 'Rape/Non-Con Tag', 'stacked_barchart_explicity_tag.png')
+    create_histogram(df, 'Focalization', '../images/histogram_focalization.png')
+    create_histogram(df, 'Level of Explicity', '../images/histogram_level_of_explicity.png')
+    create_stacked_barchart(df, 'Level of Explicity', 'Rape/Non-Con Tag', '../images/stacked_barchart_explicity_tag.png')
 
 if __name__ == '__main__':
     main()

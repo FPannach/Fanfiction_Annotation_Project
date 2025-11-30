@@ -86,7 +86,7 @@ if __name__ == "__main__":
     parser.add_argument("output_filename", help="The name of the output file (without extension).")
     args = parser.parse_args()
 
-    with open("catalogue_MOD.ttl", "r") as f:
+    with open("../catalogue_MOD.ttl", "r") as f:
         ttl_content = f.read()
     
     all_concepts = parse_skos_ttl(ttl_content)
@@ -95,6 +95,6 @@ if __name__ == "__main__":
     
     dot_graph = generate_dot_graph(all_concepts, concepts_to_render)
     
-    dot_graph.render(args.output_filename, format='png', view=False, cleanup=True)
+    dot_graph.render(f'../images/{args.output_filename}', format='png', view=False, cleanup=True)
     print(f"Generated {args.output_filename}.png")
 

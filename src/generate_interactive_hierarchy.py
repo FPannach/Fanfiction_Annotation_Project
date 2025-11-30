@@ -55,7 +55,7 @@ def build_hierarchy(concepts):
         nested_concepts[cid]['children'] = []
 
     root_nodes = []
-    for cid, data in nested_concepts.items():
+    for cid, data in concepts.items():
         if data['broader']:
             for parent_id in data['broader']:
                 if parent_id in nested_concepts:
@@ -102,7 +102,7 @@ def main():
     """
     Main function to generate the interactive HTML file.
     """
-    with open('catalogue_MOD.ttl', 'r', encoding='utf-8') as f:
+    with open('../catalogue_MOD.ttl', 'r', encoding='utf-8') as f:
         ttl_content = f.read()
 
     concepts_dict = parse_ttl_to_dict(ttl_content)
@@ -185,7 +185,7 @@ def main():
     <body>
         <h1>Interactive SKOS Vocabulary</h1>
         <div id="hierarchy-container">
-    """
+    "
     
     footer = """
         </div>
@@ -235,7 +235,7 @@ def main():
 
     final_html = header + hierarchy_html + footer
     
-    with open('hierarchy.html', 'w', encoding='utf-8') as f:
+    with open('../hierarchy.html', 'w', encoding='utf-8') as f:
         f.write(final_html)
 
     print("Successfully generated hierarchy.html")
